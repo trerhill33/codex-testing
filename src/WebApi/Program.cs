@@ -9,6 +9,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddSingleton<ITodoRepository, InMemoryTodoRepository>();
+builder.Services.AddScoped<IUnitOfWork, InMemoryUnitOfWork>();
 builder.Services.AddScoped<TodoService>();
 
 var app = builder.Build();
